@@ -25,19 +25,20 @@
     @include pos;
     width: rem(36px);
     height: rem(36px);
-    background: teal;
+    background: inherit;
     border: 0;
     padding: 0;
+    top: rem(65px);
+    right: rem(20px);
 
     &BarTop,
     &BarMiddle,
     &BarBottom {
-      @include pos;
-      display: block;
       background: $white;
       width: 100%;
       height: 20%;
       border-radius: rem(10px);
+      left: 0;
     }
 
     &BarTop {

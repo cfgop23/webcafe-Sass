@@ -1,12 +1,20 @@
 @use "../utils/unit" as *;
 
 // Position 관련 믹스인
-@mixin pos($pos: absolute, $t: initial, $r: initial, $b: initial, $l: initial) {
-  position: $pos;
+@mixin pos {
+  position: absolute;
+}
+
+@mixin posLeftTop($l: 0, $t: 0) {
+  @include pos;
+  top: $t;
+  left: $l;
+}
+
+@mixin posRightTop($r: 0, $t: 0) {
+  @include pos;
   top: $t;
   right: $r;
-  bottom: $b;
-  left: $l;
 }
 
 @mixin posCenterX {
@@ -15,14 +23,23 @@
   transform: translateX(-50%);
 }
 
+@mixin posBottomY {
+  @include pos;
+  top: 100%;
+  transform: translateY(-100%);
+}
+
 @mixin posCenterY {
   @include pos;
   top: 50%;
   transform: translateY(-50%);
 }
 
-@mixin posBottomY {
+@mixin posCenter {
   @include pos;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @mixin containerMax($max: 1024px) {
