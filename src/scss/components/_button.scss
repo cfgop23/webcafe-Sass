@@ -3,10 +3,10 @@
 .button {
   cursor: pointer;
   border: 0;
-  border-radius: 0.25rem;
-  height: 2rem;
-  padding: 0.125rem 0.75rem;
   background: transparent;
+  @include paddingX(16px);
+  border-radius: rem(4px);
+  font-size: rem(14px);
 
   &--fill {
     color: $white;
@@ -16,5 +16,41 @@
   &--outline {
     color: $brown;
     border: 1px solid currentColor;
+  }
+}
+
+// 햄버거 버튼
+.button--burger {
+  @include mobile {
+    @include pos;
+    width: rem(36px);
+    height: rem(36px);
+    background: teal;
+    border: 0;
+    padding: 0;
+
+    &BarTop,
+    &BarMiddle,
+    &BarBottom {
+      @include pos;
+      display: block;
+      background: $white;
+      width: 100%;
+      height: 20%;
+      border-radius: rem(10px);
+    }
+
+    &BarTop {
+      @include posLeftTop;
+    }
+    &BarMiddle {
+      @include posCenterY;
+    }
+    &BarBottom {
+      @include posBottomY;
+    }
+  }
+  @include desktop {
+    display: none;
   }
 }
