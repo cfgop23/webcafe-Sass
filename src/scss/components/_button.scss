@@ -1,1 +1,20 @@
-// button.scss
+@use "../utils" as *;
+
+.button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2rem;
+  padding: 0.125rem 0.75rem;
+  background: transparent;
+
+  &--fill {
+    color: $white;
+    background: $brown;
+  }
+
+  &--outline {
+    color: $brown;
+    border: 1px solid currentColor;
+  }
+}
