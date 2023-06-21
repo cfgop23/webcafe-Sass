@@ -1,1 +1,44 @@
-// navigation.scss
+@use "../utils" as *;
+
+// 메인 내비게이션
+.menu {
+  @include mobile {
+    @at-root .is--active &__list {
+      transform: none;
+    }
+
+    &__list {
+      transform: translateX(-150%);
+      width: 70vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: rem(24px);
+      background: $accent-opacity-color;
+      backdrop-filter: blur(4px);
+    }
+
+    &__item {
+      border-bottom: 2px solid #121212;
+    }
+  }
+
+  @include desktop {
+    background: $brown;
+    @at-root .menu__list {
+      @include flexbox($justify: space-between);
+      @include containerMax;
+      @include paddingX(24px);
+      @include paddingY(16px);
+      color: $white;
+      font-size: rem(18px);
+      font-weight: 700;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 1rem 0;
+  }
+}

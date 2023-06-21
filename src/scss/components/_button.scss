@@ -25,11 +25,11 @@
     @include pos;
     width: rem(36px);
     height: rem(36px);
-    background: inherit;
+    background: transparent;
     border: 0;
     padding: 0;
     top: rem(65px);
-    right: rem(20px);
+    right: rem(24px);
 
     &BarTop,
     &BarMiddle,

@@ -364,6 +364,48 @@ legend {
   height: 1px;
 }
 
+.accentBook {
+  color: #abd375;
+}
+
+.accentNews {
+  color: #e8ca58;
+}
+
+.accentBoard {
+  color: #988574;
+}
+
+.accentFavorite {
+  color: #eea60a;
+}
+
+.accentTwitter {
+  color: #6aaee6;
+}
+
+.sprite {
+  min-height: 3.75rem;
+  background-image: url(./../assets/images/sprite_main.png);
+  background-repeat: no-repeat;
+  padding-left: 4rem;
+}
+.spriteBook {
+  background-position: 0 0;
+}
+.spriteBoard {
+  background-position: 0 -115px;
+}
+.spriteNews {
+  background-position: 0 -230px;
+}
+.spriteFavorite {
+  background-position: 0 -345px;
+}
+.spriteTwitter {
+  background-position: 0 -460px;
+}
+
 .formInput__input {
   appearance: none;
   display: block;
@@ -398,11 +440,11 @@ legend {
     position: absolute;
     width: 2.25rem;
     height: 2.25rem;
-    background: inherit;
+    background: transparent;
     border: 0;
     padding: 0;
     top: 4.0625rem;
-    right: 1.25rem;
+    right: 1.5rem;
   }
   .button--burgerBarTop, .button--burgerBarMiddle, .button--burgerBarBottom {
     background: #ffffff;
@@ -501,6 +543,177 @@ legend {
   .searchForm__group .formInput {
     width: 25rem;
   }
+}
+
+@media (max-width: 767px) {
+  .is--active .menu__list {
+    transform: none;
+  }
+  .menu__list {
+    transform: translateX(-150%);
+    width: 70vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    background: rgba(240, 230, 140, 0.85);
+    backdrop-filter: blur(4px);
+  }
+  .menu__item {
+    border-bottom: 2px solid #121212;
+  }
+}
+@media (min-width: 768px) {
+  .menu {
+    background: #988574;
+  }
+  .menu__list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+}
+.menu__link {
+  display: block;
+  padding: 1rem 0;
+}
+
+.appMain {
+  padding: 1.5rem;
+}
+@media (max-width: 767px) {
+  .appMain {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: auto;
+    grid-column-gap: 0rem;
+    grid-row-gap: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .appMain {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+  }
+  .appMain .book {
+    grid-area: 2/1/4/5;
+  }
+  .appMain .news {
+    grid-area: 1/1/2/13;
+  }
+  .appMain .board {
+    grid-area: 3/6/4/13;
+  }
+  .appMain .favorite {
+    grid-area: 2/10/4/13;
+  }
+  .appMain .twitter {
+    grid-area: 2/5/3/10;
+  }
+}
+.appMain [class*=__title] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.appMain [class*=__enTitle] {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.book__cover {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.book__info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  column-gap: 0.2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.ratingStar {
+  width: 100%;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.iframeWrapper {
+  aspect-ratio: 16/9;
+}
+
+.news__summary, .news__date {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+.news__date {
+  display: block;
+  text-align: right;
+}
+
+.board {
+  position: relative;
+}
+.board__item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 0.25rem 0;
+}
+.board__link {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board__date {
+  white-space: nowrap;
+  padding-left: 1rem;
+}
+.board__more {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.twitter__userProfile {
+  width: clamp(60px, 20%, 80px);
+  aspect-ratio: 1/1;
+}
+.twitter__userProfileImage {
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 0 0;
 }
 
 /*# sourceMappingURL=index.css.map */
